@@ -13,15 +13,20 @@ public class Beer {
 	
 	private String name;
 	
-	private double averageAbv;
+	private String description;
 	
-	private double averageIbu;
+	private double abv;
+	
+	private int ibu;
+	
+	private String type;
+	
 
-	
 	
 	public Beer() {
 		super();
 	}
+
 
 
 	public int getId() {
@@ -29,9 +34,11 @@ public class Beer {
 	}
 
 
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 
 
 	public String getName() {
@@ -39,19 +46,84 @@ public class Beer {
 	}
 
 
+
 	public void setName(String name) {
 		this.name = name;
 	}
 
 
+
+	public String getDescription() {
+		return description;
+	}
+
+
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+
+
+	public double getAbv() {
+		return abv;
+	}
+
+
+
+	public void setAbv(double abv) {
+		this.abv = abv;
+	}
+
+
+
+	public int getIbu() {
+		return ibu;
+	}
+
+
+
+	public void setIbu(int ibu) {
+		this.ibu = ibu;
+	}
+
+
+
+	public String getType() {
+		return type;
+	}
+
+
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Beer id: ");
+		builder.append("Beer Id: ");
 		builder.append(id);
-		builder.append("Name: ");
+		builder.append(" Name: ");
 		builder.append(name);
+		builder.append(" Description: ");
+		builder.append(description);
+		builder.append(" ABV: ");
+		builder.append(abv);
+		builder.append(" IBU: ");
+		builder.append(ibu);
+		builder.append(" Type: ");
+		builder.append(type);
+		
 		return builder.toString();
 	}
+
+
+
+
+
+	
 
 }
