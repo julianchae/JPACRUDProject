@@ -25,11 +25,11 @@
 		Find Beer by Type: <input type="text" name="type" /> <input
 			type="submit" value="Find Beer" />
 	</form>
-	
-	
-<a href ="addbeer.do"> Add A Beer</a>
 
-<!-- <a href ="deletebeer.do"> Delete A Beer</a> -->
+
+	<a href="addbeer.do"> Add A Beer</a>
+
+	<!-- <a href ="deletebeer.do"> Delete A Beer</a> -->
 
 	<h3>Delete A Beer by ID</h3>
 
@@ -38,17 +38,37 @@
 		<br> <input type="submit" value="Delete beer">
 	</form>
 
-<ol>
 
-<c:forEach var = "b" items= "${beers}" >
+	<h3>Update A Beer by ID</h3>
 
-<ul>ID: ${b.id}. ${b.name}</ul>
+	<form action="updatebeer.do" method="POST">
+		<label for="id">ID of beer you want to change:</label> <input
+			type="text" name="id">
+			 <label for="name">New name:</label> <input
+			type="text" name="name"> <br> <label for="description">Description:</label>
+		<input type="text" name="description"> <br> <label
+			for="abv">ABV:</label> <input type="text" name="abv"> <br>
+		<label for="ibu">IBU:</label> <input type="text" name="ibu"> <br>
+		<label for="type">Type:</label> <input type="text" name="type">
+
+		<br> <input type="submit" value="Update beer">
+	</form>
 
 
-</c:forEach>
+<h3>Beer List</h3>
+
+	<ol>
+
+		<c:forEach var="b" items="${beers}">
+
+			<ul>ID: ${b.id}. ${b.name}
+			</ul>
 
 
-</ol>
+		</c:forEach>
+
+
+	</ol>
 
 
 

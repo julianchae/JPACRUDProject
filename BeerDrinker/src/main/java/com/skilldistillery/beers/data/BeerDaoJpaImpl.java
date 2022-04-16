@@ -90,6 +90,24 @@ public class BeerDaoJpaImpl implements BeersDAO {
 		
 		return beers;
 	}
+
+	@Override
+	public Beer updateBeer(int id, Beer beer) {
+		
+		Beer managed = em.find(Beer.class, id);
+		
+		managed.setName(beer.getName());
+		managed.setDescription(beer.getDescription());
+		managed.setAbv(beer.getAbv());
+		managed.setIbu(beer.getIbu());
+		managed.setType(beer.getType());
+		
+		
+		
+		
+		
+		return managed;
+	}
 	
 	
 	

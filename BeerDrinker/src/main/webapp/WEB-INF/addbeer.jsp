@@ -20,6 +20,8 @@
 		<input type="text" name="type"> <input type="submit"
 			value="Add Beer">
 	</form>
+	
+	<a href= "home.do"> Nevermind, go back</a>
 
 
 

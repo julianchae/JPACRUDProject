@@ -62,16 +62,9 @@ public class BeerController {
 	}
 
 	@RequestMapping(path = "addBeer.do", method = RequestMethod.POST)
-	public ModelAndView addBeer(String name, String description, double abv, int ibu, String type,
+	public ModelAndView addBeer(Beer beer,
 			RedirectAttributes redir) {
 		ModelAndView mv = new ModelAndView();
-		Beer beer = new Beer();
-		beer.setName(name);
-		beer.setAbv(abv);
-		beer.setDescription(description);
-		beer.setIbu(ibu);
-		beer.setType(type);
-
 		dao.addBeer(beer);
 		redir.addFlashAttribute("beer", beer);
 		mv.setViewName("redirect:beerAdded.do");
@@ -93,18 +86,12 @@ public class BeerController {
 
 	}
 	
-//	@RequestMapping(path= "deletebeer.do")
-//	public String toDeleteForm(Model model) {
-//		
-//		return "deletebeer";
-//	}
-
-
 
 	@RequestMapping(path = "deleteBeer.do", method = RequestMethod.POST)
 	public ModelAndView deleteBeer(int id, RedirectAttributes redir) {
 		ModelAndView mv = new ModelAndView();
 		Beer beer = dao.deleteBeer(id);
+		
 
 		redir.addFlashAttribute("beer", beer);
 
@@ -118,7 +105,30 @@ public class BeerController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("deletedBeer");
 		return mv;
+	
 	}
+	
+	@RequestMapping(path = "updatebeer.do", method = RequestMethod.POST)
+	public ModelAndView updateBeer(int id, Beer beer, RedirectAttributes redir) {
+		ModelAndView mv = new ModelAndView();
+		
+		beer = dao.updateBeer(id, beer);
+		
+		redir.addFlashAttribute("beer", beer);
 
-
+		mv.setViewName("redirect:updatedBeer.do");
+		
+		return mv;
+		
+	}
+	
+	
+	@RequestMapping("updatedBeer.do")
+	public ModelAndView beerUpdated() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("updatedbeer");
+		return mv;
+	
+	}
+	
 }

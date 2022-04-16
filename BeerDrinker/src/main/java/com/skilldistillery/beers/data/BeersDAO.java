@@ -17,6 +17,10 @@ public interface BeersDAO {
 	
 	List <Beer>listAll();
 	
+	Beer updateBeer(int id, Beer beer);
+	
+	
+	
 	
 	
 }
