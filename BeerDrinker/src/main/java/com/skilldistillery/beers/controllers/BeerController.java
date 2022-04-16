@@ -21,6 +21,11 @@ public class BeerController {
 
 	@RequestMapping(path = { "/", "home.do" })
 	public String home(Model model) {
+		
+		List<Beer> beers = dao.listAll();
+		model.addAttribute("beers", beers);
+		
+		
 
 		return "home";
 
@@ -30,7 +35,7 @@ public class BeerController {
 	public String findById(Integer id, Model model) {
 		Beer beer = dao.findbyId(id);
 		model.addAttribute("beer", beer);
-		return "result"; // show a beer jsp
+		return "result"; 
 	}
 
 	@RequestMapping(path = "getBeerByName.do")
@@ -87,13 +92,14 @@ public class BeerController {
 		return "addbeer";
 
 	}
+	
+//	@RequestMapping(path= "deletebeer.do")
+//	public String toDeleteForm(Model model) {
+//		
+//		return "deletebeer";
+//	}
 
-	@RequestMapping(path = { "deletebeer.do" })
-	public String toDeleteForm(Model model) {
 
-		return "deletebeer";
-
-	}
 
 	@RequestMapping(path = "deleteBeer.do", method = RequestMethod.POST)
 	public ModelAndView deleteBeer(int id, RedirectAttributes redir) {
@@ -113,4 +119,6 @@ public class BeerController {
 		mv.setViewName("deletedBeer");
 		return mv;
 	}
+
+
 }

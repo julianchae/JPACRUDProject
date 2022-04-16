@@ -29,8 +29,27 @@
 	
 <a href ="addbeer.do"> Add A Beer</a>
 
+<!-- <a href ="deletebeer.do"> Delete A Beer</a> -->
 
-<a href ="deletebeer.do"> Delete A Beer</a>
+	<h3>Delete A Beer by ID</h3>
+
+	<form action="deleteBeer.do" method="POST">
+		<label for="id">Beer ID:</label> <input type="text" name="id">
+		<br> <input type="submit" value="Delete beer">
+	</form>
+
+<ol>
+
+<c:forEach var = "b" items= "${beers}" >
+
+<ul>ID: ${b.id}. ${b.name}</ul>
+
+
+</c:forEach>
+
+
+</ol>
+
 
 
 </body>
