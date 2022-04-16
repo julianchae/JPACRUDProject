@@ -15,6 +15,8 @@ public interface BeersDAO {
 	
 	Beer deleteBeer(int id);
 	
+	List <Beer>listAll();
+	
 	
 	
 }

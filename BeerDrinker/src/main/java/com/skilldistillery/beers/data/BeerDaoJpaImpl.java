@@ -81,5 +81,16 @@ public class BeerDaoJpaImpl implements BeersDAO {
 
 		return beer;
 	}
+
+	@Override
+	public List<Beer> listAll() {
+		
+		String jpql = "SELECT b from Beer b";
+		List<Beer> beers = em.createQuery(jpql, Beer.class).getResultList();
+		
+		return beers;
+	}
+	
+	
 	
 }

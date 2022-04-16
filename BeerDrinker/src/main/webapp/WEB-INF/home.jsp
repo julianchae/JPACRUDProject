@@ -10,7 +10,7 @@
 </head>
 <body>
 
-	<h1>Welcome to Java Brewing</h1>
+	<h1>Welcome to SkillBrewery!</h1>
 
 	<form action="getBeer.do" method="GET">
 		Find Beer by it's ID: <input type="text" name="id" /> <input
@@ -26,19 +26,11 @@
 			type="submit" value="Find Beer" />
 	</form>
 	
-	<h3>Add a Beer</h3>
-
-	<form action="addBeer.do" method="POST">
-		<label for="name">Name:</label> <input type="text" name="name">
-		<br> <label for="description">Description:</label> <input
-			type="text" name="description"> <br> <label for="abv">ABV:</label>
-		<input type="text" name="abv"> <br> <label for="ibu">IBU:</label>
-		<input type="text" name="ibu"> <br> <label for="type">Type:</label>
-		<input type="text" name="type"> <input type="submit"
-			value="Add Beer">
-	</form>
+	
+<a href ="addbeer.do"> Add A Beer</a>
 
 
+<a href ="deletebeer.do"> Delete A Beer</a>
 
 
 </body>

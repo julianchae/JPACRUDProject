@@ -15,47 +15,50 @@ import com.skilldistillery.beers.entities.Beer;
 
 @Controller
 public class BeerController {
-	
+
 	@Autowired
 	private BeersDAO dao;
-	
-	
-	@RequestMapping(path = {"/","home.do"})
+
+	@RequestMapping(path = { "/", "home.do" })
 	public String home(Model model) {
-		
+
 		return "home";
-		
+
 	}
-	@RequestMapping(path="getBeer.do")
+
+	@RequestMapping(path = "getBeer.do")
 	public String findById(Integer id, Model model) {
-	Beer beer = dao.findbyId(id);
+		Beer beer = dao.findbyId(id);
 		model.addAttribute("beer", beer);
-		return "result"; //show a beer jsp
+		return "result"; // show a beer jsp
 	}
-	
-	@RequestMapping(path="getBeerByName.do")
+
+	@RequestMapping(path = "getBeerByName.do")
 	public ModelAndView findByName(String name) {
 		ModelAndView mv = new ModelAndView();
 		Beer beer = dao.findByName(name);
 		mv.addObject("beer", beer);
 		mv.setViewName("result");
-		
+
 		return mv;
-		
+
 	}
-	@RequestMapping(path="getBeerByType.do")
+
+	@RequestMapping(path = "getBeerByType.do")
 	public ModelAndView findByType(String type) {
 		ModelAndView mv = new ModelAndView();
-		
+
 		List<Beer> beers = dao.findByType(type);
 		mv.addObject("beers", beers);
 		mv.setViewName("beersbytype");
-		
+
 		return mv;
-		
+
 	}
-	@RequestMapping(path="addBeer.do", method= RequestMethod.POST)
-	public ModelAndView addBeer(String name, String description, double abv, int ibu, String type, RedirectAttributes redir ) {
+
+	@RequestMapping(path = "addBeer.do", method = RequestMethod.POST)
+	public ModelAndView addBeer(String name, String description, double abv, int ibu, String type,
+			RedirectAttributes redir) {
 		ModelAndView mv = new ModelAndView();
 		Beer beer = new Beer();
 		beer.setName(name);
@@ -63,14 +66,14 @@ public class BeerController {
 		beer.setDescription(description);
 		beer.setIbu(ibu);
 		beer.setType(type);
-		
+
 		dao.addBeer(beer);
 		redir.addFlashAttribute("beer", beer);
 		mv.setViewName("redirect:beerAdded.do");
 		return mv;
-		
-		
+
 	}
+
 	@RequestMapping("beerAdded.do")
 	public ModelAndView beerAdded() {
 		ModelAndView mv = new ModelAndView();
@@ -78,6 +81,36 @@ public class BeerController {
 		return mv;
 	}
 
-	
+	@RequestMapping(path = { "addbeer.do" })
+	public String toAddForm(Model model) {
 
+		return "addbeer";
+
+	}
+
+	@RequestMapping(path = { "deletebeer.do" })
+	public String toDeleteForm(Model model) {
+
+		return "deletebeer";
+
+	}
+
+	@RequestMapping(path = "deleteBeer.do", method = RequestMethod.POST)
+	public ModelAndView deleteBeer(int id, RedirectAttributes redir) {
+		ModelAndView mv = new ModelAndView();
+		Beer beer = dao.deleteBeer(id);
+
+		redir.addFlashAttribute("beer", beer);
+
+		mv.setViewName("redirect:beerDeleted.do");
+
+		return mv;
+	}
+
+	@RequestMapping("beerDeleted.do")
+	public ModelAndView beerDeleted() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("deletedBeer");
+		return mv;
+	}
 }

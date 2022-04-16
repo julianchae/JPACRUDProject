@@ -31,5 +31,7 @@
 		</tr>
 	</c:forEach>
 
+<a href= "home.do"> Go Home</a>
+
 </body>
 </html>
