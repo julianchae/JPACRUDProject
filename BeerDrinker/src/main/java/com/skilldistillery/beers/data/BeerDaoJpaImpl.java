@@ -53,12 +53,7 @@ public class BeerDaoJpaImpl implements BeersDAO {
 	}
 
 	public Beer addBeer(Beer beer) {
-		
 	
-//		String query ="INSERT INTO beer " + " (name, description, abv, ibu, type) "+" :n, :d, :a, :i, :t ";
-		
-//		beer = em.createQuery(query,Beer.class).setParameter("n", beer.getName()).setParameter("d", beer.getDescription())
-//				.setParameter("a", beer.getAbv()).setParameter("i", beer.getIbu()).setParameter("t", beer.getType());
 
 		em.persist(beer);
 		

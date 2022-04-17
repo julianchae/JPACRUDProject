@@ -85,7 +85,13 @@ public class BeerController {
 		return "addbeer";
 
 	}
-	
+	@RequestMapping(path = { "deletebeer.do"  }) //home to beer form
+	public String toDeleteForm(Model model) {
+		
+		List<Beer> beers = dao.listAll();
+		model.addAttribute("beers", beers);
+		return "deletebeerform";
+	}
 
 	@RequestMapping(path = "deleteBeer.do", method = RequestMethod.POST)
 	public ModelAndView deleteBeer(int id, RedirectAttributes redir) {
@@ -107,8 +113,17 @@ public class BeerController {
 		return mv;
 	
 	}
+
+	@RequestMapping(path = { "updatebeer.do"  }) //home to beer form
+	public String toUpdateForm(Model model) {
+		
+		List<Beer> beers = dao.listAll();
+		model.addAttribute("beers", beers);
+		return "updateform";
+	}
+
 	
-	@RequestMapping(path = "updatebeer.do", method = RequestMethod.POST)
+	@RequestMapping(path = "updateBeer.do", method = RequestMethod.POST)
 	public ModelAndView updateBeer(int id, Beer beer, RedirectAttributes redir) {
 		ModelAndView mv = new ModelAndView();
 		
