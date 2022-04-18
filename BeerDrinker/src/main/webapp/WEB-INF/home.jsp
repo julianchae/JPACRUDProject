@@ -26,32 +26,25 @@
 			type="submit" value="Find Beer" />
 	</form>
 
+	
+	<a href= "addbeer.do"> Add a Beer!</a>
 
-	<a href="addbeer.do"> Add A Beer</a>
 
-	 <a href ="deletebeer.do"> Delete A Beer</a> 
-	
-	<a href ="updatebeer.do"> Update A Beer</a> 
-	
-	
+<h3>Our Current Beer List</h3>
 
 	
 
-
-<h3>Beer List</h3>
-
-	<ol>
-
+			<ul>
 		<c:forEach var="b" items="${beers}">
 
-			<ul>ID: ${b.id}. ${b.name}
-			</ul>
+		<li>ID: ${b.id}. ${b.name}  <a href="updatebeercontroller.do?id=${b.id }"> Update Beer</a>  <a href="deleteBeerController.do?id=${b.id }"> Delete Beer</a>          </li>
 
 
 		</c:forEach>
+			</ul>
 
 
-	</ol>
+	
 
 
 

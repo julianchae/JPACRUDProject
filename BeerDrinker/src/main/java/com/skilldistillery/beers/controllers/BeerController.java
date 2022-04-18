@@ -93,8 +93,9 @@ public class BeerController {
 		return "deletebeerform";
 	}
 
-	@RequestMapping(path = "deleteBeer.do", method = RequestMethod.POST)
-	public ModelAndView deleteBeer(int id, RedirectAttributes redir) {
+	@RequestMapping(path = "deleteBeerController.do", method = RequestMethod.GET)
+	public ModelAndView deleteBeer(Integer id, RedirectAttributes redir) {
+		System.out.println(id);
 		ModelAndView mv = new ModelAndView();
 		Beer beer = dao.deleteBeer(id);
 		
@@ -114,11 +115,11 @@ public class BeerController {
 	
 	}
 
-	@RequestMapping(path = { "updatebeer.do"  }) //home to beer form
-	public String toUpdateForm(Model model) {
+	@RequestMapping(path = { "updatebeercontroller.do"  }) //home to beer form
+	public String toUpdateForm(Model model, Integer id) {
 		
-		List<Beer> beers = dao.listAll();
-		model.addAttribute("beers", beers);
+		Beer beer = dao.findbyId(id);
+		model.addAttribute("beer", beer);
 		return "updateform";
 	}
 
