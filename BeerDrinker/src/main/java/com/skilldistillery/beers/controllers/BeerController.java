@@ -85,7 +85,7 @@ public class BeerController {
 	@RequestMapping("beerAdded.do")
 	public ModelAndView beerAdded() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("result");
+		mv.setViewName("resultnewbeer");
 		return mv;
 	}
 

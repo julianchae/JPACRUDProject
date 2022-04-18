@@ -5,8 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 </head>
 <body>
+<%@ include file="NewBootStrap.jsp"%>
 <h3>${beer.name} has been deleted.</h3>
 
 <a href= "home.do"> Go Home</a>

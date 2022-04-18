@@ -9,6 +9,7 @@
 <title>Beers!</title>
 </head>
 <body>
+<%@ include file="NewBootStrap.jsp"%>
 
 	<h1>Welcome to SkillBrewery!</h1>
 

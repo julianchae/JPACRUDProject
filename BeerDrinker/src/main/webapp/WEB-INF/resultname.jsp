@@ -7,8 +7,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Beer Info</title>
+
 </head>
 <body>
+<%@ include file="NewBootStrap.jsp"%>
 <c:choose>
 <c:when test="${! not empty beer.id }">
 

@@ -9,6 +9,7 @@
 
 </head>
 <body>
+<%@ include file="NewBootStrap.jsp"%>
 <c:choose>
 <c:when test="${! not empty beers }">
 

@@ -9,6 +9,7 @@
 <title>update form</title>
 </head>
 <body>
+<%@ include file="NewBootStrap.jsp"%>
 
 
 <h3>Update A Beer by ID</h3>
