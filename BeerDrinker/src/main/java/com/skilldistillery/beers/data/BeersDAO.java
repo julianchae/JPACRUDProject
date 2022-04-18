@@ -5,7 +5,7 @@ import java.util.List;
 import com.skilldistillery.beers.entities.Beer;
 
 public interface BeersDAO {
-	Beer findbyId(int id);
+	Beer findbyId(Integer id);
 	
 	Beer findByName(String name);
 	

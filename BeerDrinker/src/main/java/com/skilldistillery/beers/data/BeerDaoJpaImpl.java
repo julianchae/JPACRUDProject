@@ -20,9 +20,14 @@ public class BeerDaoJpaImpl implements BeersDAO {
 	private static EntityManagerFactory emf;
 
 	@Override
-	public Beer findbyId(int id) {
-		
-		return em.find(Beer.class, id);
+	public Beer findbyId(Integer id) {
+		if(id!=null) {
+			
+			return em.find(Beer.class, id);
+		}
+		else {
+			return null;
+		}
 		
 		
 	}

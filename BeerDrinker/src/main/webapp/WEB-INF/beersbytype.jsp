@@ -9,11 +9,19 @@
 
 </head>
 <body>
+<c:choose>
+<c:when test="${! not empty beers }">
+
+
+No beers with that type.
+
+<a href= "home.do"> Go Home</a>
+
+</c:when>
 
 
 
-
-
+<c:otherwise>
 	<h1>Beers</h1>
 	<c:forEach items="${beers}" var="beer">
 		<tr>
@@ -32,6 +40,9 @@
 	</c:forEach>
 
 <a href= "home.do"> Go Home</a>
+</c:otherwise>
+
+</c:choose>
 
 </body>
 </html>

@@ -35,16 +35,22 @@ public class BeerController {
 	public String findById(Integer id, Model model) {
 		Beer beer = dao.findbyId(id);
 		model.addAttribute("beer", beer);
-		return "result"; 
+		return "resultid"; 
 	}
 
 	@RequestMapping(path = "getBeerByName.do")
 	public ModelAndView findByName(String name) {
 		ModelAndView mv = new ModelAndView();
+		if(name.equals("")) {
+			mv.setViewName("emptyfield");
+		}
+		
+		else {
+		
 		Beer beer = dao.findByName(name);
 		mv.addObject("beer", beer);
-		mv.setViewName("result");
-
+		mv.setViewName("resultname");
+		}
 		return mv;
 
 	}
@@ -52,11 +58,15 @@ public class BeerController {
 	@RequestMapping(path = "getBeerByType.do")
 	public ModelAndView findByType(String type) {
 		ModelAndView mv = new ModelAndView();
-
+		if(type.equals("")) {
+			mv.setViewName("emptyfield");
+		}
+		
+		else {
 		List<Beer> beers = dao.findByType(type);
 		mv.addObject("beers", beers);
 		mv.setViewName("beersbytype");
-
+		}
 		return mv;
 
 	}

@@ -9,6 +9,26 @@
 <title>Beer Info</title>
 </head>
 <body>
+<c:choose>
+<c:when test="${! not empty beer.id }">
+
+
+Please enter an ID
+
+<a href= "home.do"> Go Home</a>
+
+</c:when>
+
+<c:when test="${beer.id <= 0 }">
+
+
+Please enter an field
+
+<a href= "home.do"> Go Home</a>
+
+</c:when>
+
+<c:otherwise>
 
 <h1>Beer Details </h1>
 <h5>ID: ${beer.id}</h5>
@@ -19,6 +39,12 @@
 <h5>IBU: ${beer.ibu }</h5>
 
 <a href= "home.do"> Go Home</a>
+
+</c:otherwise>
+
+</c:choose>
+
+			
 
 </body>
 </html>
