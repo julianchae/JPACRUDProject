@@ -17,7 +17,6 @@
 
 No Beer Found
 
-<a href= "home.do"> Go Home</a>
 
 </c:when>
 
@@ -32,7 +31,7 @@ No Beer Found
 <h5>ABV: ${beer.abv }%</h5>
 <h5>IBU: ${beer.ibu }</h5>
 
-<a href= "home.do"> Go Home</a>
+
 
 </c:otherwise>
 

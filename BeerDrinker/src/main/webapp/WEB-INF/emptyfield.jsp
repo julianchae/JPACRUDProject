@@ -12,6 +12,6 @@
 Please enter a field
 
 
-<a href= "home.do"> Go Home</a>
+
 </body>
 </html>

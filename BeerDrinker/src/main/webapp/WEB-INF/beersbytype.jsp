@@ -16,7 +16,7 @@
 
 No beers with that type.
 
-<a href= "home.do"> Go Home</a>
+
 
 </c:when>
 
@@ -40,7 +40,7 @@ No beers with that type.
 		</tr>
 	</c:forEach>
 
-<a href= "home.do"> Go Home</a>
+
 </c:otherwise>
 
 </c:choose>

@@ -17,7 +17,7 @@
 
 No beers found
 
-<a href= "home.do"> Go Home</a>
+
 
 </c:when>
 
@@ -26,7 +26,7 @@ No beers found
 
 No beers found
 
-<a href= "home.do"> Go Home</a>
+
 
 </c:when>
 

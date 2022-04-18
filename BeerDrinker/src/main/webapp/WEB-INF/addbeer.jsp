@@ -22,7 +22,7 @@
 			value="Add Beer">
 	</form>
 	
-	<a href= "home.do"> Nevermind, go back</a>
+
 
 
 

@@ -14,7 +14,6 @@
 
 <h3>Update A Beer by ID</h3>
 
-<a href= "home.do"> Nevermind, go back</a>
 
 	<form action="updateBeer.do" method="POST">
 		<input type="hidden" name = "id" value = "${beer.id }">

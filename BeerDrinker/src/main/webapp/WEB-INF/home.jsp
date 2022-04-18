@@ -14,8 +14,6 @@
 	
 	
 	
-
-
 <h3>Our Current Beer List</h3>
 
 	
