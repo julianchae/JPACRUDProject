@@ -15,20 +15,12 @@
 <c:when test="${! not empty beer.id }">
 
 
-Please enter an ID
+No Beer Found
 
 <a href= "home.do"> Go Home</a>
 
 </c:when>
 
-<c:when test="${beer.id <= 0 }">
-
-
-Please enter an field
-
-<a href= "home.do"> Go Home</a>
-
-</c:when>
 
 <c:otherwise>
 

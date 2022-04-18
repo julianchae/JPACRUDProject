@@ -11,24 +11,9 @@
 <body>
 <%@ include file="NewBootStrap.jsp"%>
 
-	<h1>Welcome to SkillBrewery!</h1>
-
-	<form action="getBeer.do" method="GET">
-		Find Beer by it's ID: <input type="text" name="id" /> <input
-			type="submit" value="Find Beer" />
-	</form>
-
-	<form action="getBeerByName.do" method="GET">
-		Find Beer by Name: <input type="text" name="name" /> <input
-			type="submit" value="Find Beer" />
-	</form>
-	<form action="getBeerByType.do" method="GET">
-		Find Beer by Type: <input type="text" name="type" /> <input
-			type="submit" value="Find Beer" />
-	</form>
-
 	
-	<a href= "addbeer.do"> Add a Beer!</a>
+	
+	
 
 
 <h3>Our Current Beer List</h3>
